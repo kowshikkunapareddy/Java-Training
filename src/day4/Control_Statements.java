@@ -17,21 +17,17 @@ public class Control_Statements {
 //        }
 //        }
 
-//        int a = 20, b = 5;
-//    if (a%2 ==0){
-//        System.out.println("a is the even");
-//}
-//  }else {
-//        System.out.println("a is odd");
-//}
-//if (b%2==0){
-//System.out.println("b is even");
-//}
-//else {
-//System.out.println("b is odd");
-//}
-
-
-
-
+        int a = 20, b = 5;
+        if (a % 2 == 0) {
+            System.out.println("a is the even");
+        } else {
+            System.out.println("a is odd");
+        }
+        if (b % 2 == 0) {
+            System.out.println("b is even");
+        } else {
+            System.out.println("b is odd");
+        }
+    }
 }
+

@@ -5,7 +5,7 @@ public class Vowle_Consonant {
 
         // Logic for Vowle and Consonant
 
-        char ch ='f';
+        char ch ='o';
         
         if (ch == 'a'|| ch =='e'|| ch=='i'|| ch=='o'|| ch=='u'){
             System.out.println("The alphabet is a Vowle");
