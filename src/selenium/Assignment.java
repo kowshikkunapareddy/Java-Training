@@ -17,17 +17,18 @@ public class Assignment {
 
         WebDriver driver = new ChromeDriver();
 
-        By contactUs = By.xpath("//a//span[@class='contact__link-container__label']");
+        By contactUs = By.xpath("//span[text() = \"Contact Us\"]");
         By searchTab = By.xpath("//form[@class=\"search search-full\"]//input[2]");
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
         driver.get("https://www.codashop.com/en-in/");
         driver.manage().window().maximize();
+        String parent= driver.getWindowHandle();
 
         ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight);");
 
         WebElement contactus = wait.until(ExpectedConditions.elementToBeClickable(contactUs));
-        driver.findElement(contactUs).click();
+        contactus.click();
 
         Set<String> allWindowHandles = driver.getWindowHandles();
 
@@ -51,7 +52,7 @@ public class Assignment {
         driver.findElement(searchTab).sendKeys("Come Back to India");
         driver.close();
 
-        driver.switchTo().window((String) allWindowHandles.toArray()[0]);
+        driver.switchTo().window(parent);
 
         // Perform actions on the main window
         System.out.println("Returned to main window. Current page title: " + driver.getTitle());
